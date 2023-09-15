@@ -5,7 +5,7 @@ import kareltherobot.*;
 public class Diamond implements Directions
 {
 
-	void turnRight(Robot bot){
+	public static void turnRight(Robot bot){
 		bot.turnLeft();
 		bot.turnLeft();
 		bot.turnLeft();
@@ -25,15 +25,9 @@ public class Diamond implements Directions
 				bobbie.putBeeper();
 				bobbie.move();
 			}
-			//bobbie.turnRight(bobbie);
-			bobbie.turnLeft();
-			bobbie.turnLeft();
-			bobbie.turnLeft();
+			turnRight(bobbie);
 			bobbie.move();
-			//bobbie.turnRight(bobbie);
-			bobbie.turnLeft();
-			bobbie.turnLeft();
-			bobbie.turnLeft();
+			turnRight(bobbie);
 			for(int b=0; b<i; b++){
 				bobbie.move();
 			}
