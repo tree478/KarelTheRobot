@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "jars/**/*.jar"
+        "jars/**/*.jar",
+        "gson-2.8.0-javadoc.jar"
     ]
 }
