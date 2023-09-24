@@ -1,5 +1,5 @@
-import javax.swing.*;
-import java.awt.event.*;
+//import javax.swing.*;
+//import java.awt.event.*;
 import kareltherobot.*;
 
 public class TagTeam implements Directions {
@@ -10,19 +10,19 @@ public class TagTeam implements Directions {
         bob.turnLeft();
     }
 
+    public static void moveForward(Robot bob){
+        bob.move();
+        bob.putBeeper();
+    }
+
     public static void climbStairs(Robot bob){
         for(int i=0; i<4; i++){
             bob.putBeeper();
-            bob.move();
-            bob.putBeeper();
-            bob.move();
-            bob.putBeeper();
+            moveForward(bob);
+            moveForward(bob);
             turnRight(bob);
-            bob.move();
-            bob.putBeeper();
-            bob.move();
-            bob.putBeeper();
-            bob.putBeeper();
+            moveForward(bob);
+            moveForward(bob);
             bob.move();
             bob.turnLeft();
         }
@@ -40,21 +40,17 @@ public class TagTeam implements Directions {
         for(int i=0; i<3; i++){
             bob.move();
             bob.turnLeft();
-            bob.move();
-            bob.putBeeper();
+            moveForward(bob);
             turnRight(bob);
 
         }
-        bob.move();
-        bob.putBeeper();
-        bob.move();
-        bob.putBeeper();
+        moveForward(bob);
+        moveForward(bob);
 
         for(int i=0; i<3; i++){
             bob.move();
             turnRight(bob);
-            bob.move();
-            bob.putBeeper();
+            moveForward(bob);
             bob.turnLeft();
 
         }
@@ -62,50 +58,100 @@ public class TagTeam implements Directions {
 
     public static void thirdMethod(Robot bob){
         for(int i=0; i<5; i++){
-            bob.move();
-            bob.putBeeper();
+            moveForward(bob);
         }
         
         turnRight(bob);
-        bob.move();
-        bob.putBeeper();
-        bob.move();
-        bob.putBeeper();
+        moveForward(bob);
+        moveForward(bob);
 
         bob.move();
         turnRight(bob);
-        bob.move();
-        bob.putBeeper();
+        moveForward(bob);
         bob.turnLeft();
         bob.move();
         bob.turnLeft();
-        bob.move();
-        bob.putBeeper();
+        moveForward(bob);
 
         bob.turnLeft();
         bob.turnLeft();
 
-        bob.move();
-        bob.putBeeper();
-        bob.move();
-        bob.putBeeper();
+        moveForward(bob);
+        moveForward(bob);
     }
 
     public static void goHome(Robot bob){
         for(int i=0; i<3; i++){
             turnRight(bob);
-            bob.move();
-            bob.putBeeper();
+            moveForward(bob);
+            bob.turnLeft();
+            moveForward(bob);
+        }
+        bob.turnLeft();
+        moveForward(bob);
+        moveForward(bob);
+        moveForward(bob);
+        bob.move();
+
+        bob.turnLeft();
+        moveForward(bob);
+        bob.turnLeft();
+        moveForward(bob);
+        turnRight(bob);
+        moveForward(bob);
+
+        turnRight(bob);
+        for(int i=0; i<5; i++){
+            moveForward(bob);
+        }
+        
+        bob.turnLeft();
+        moveForward(bob);
+        turnRight(bob);
+        moveForward(bob);
+        moveForward(bob);
+        bob.turnLeft();
+        moveForward(bob);
+        moveForward(bob);
+        bob.turnLeft();
+        moveForward(bob);
+        moveForward(bob);
+        moveForward(bob);
+        turnRight(bob);
+        moveForward(bob);
+        moveForward(bob);
+        bob.turnLeft();
+        moveForward(bob);
+        moveForward(bob);
+        turnRight(bob);
+        moveForward(bob);
+        turnRight(bob);
+        for(int i=0; i<5; i++){
+            moveForward(bob);
+        }
+        turnRight(bob);
+        moveForward(bob);
+        moveForward(bob);
+        turnRight(bob);
+        moveForward(bob);
+        moveForward(bob);
+        moveForward(bob);
+        bob.turnLeft();
+        moveForward(bob);
+        moveForward(bob);
+        bob.turnLeft();
+        for(int i=0; i<5; i++){
+            moveForward(bob);
+        }
+        bob.turnLeft();
+        for(int i=0; i<4; i++){
+            moveForward(bob);
+        }
+        turnRight(bob);
+        for(int i=0; i<7; i++){
+            moveForward(bob);
         }
 
-        bob.move();
-        bob.putBeeper();
-        bob.move();
-        bob.putBeeper();
-        bob.move();
-        bob.putBeeper();
-        turnRight(bob);
-        
 
     }
     public static void main(String[] args){
@@ -116,14 +162,11 @@ public class TagTeam implements Directions {
 		World.setSize(20, 25);
 
         climbStairs(bob);
-
-        World.setDelay(10);
         makePeak(bob);
-
         turnRight(bob);
-
+        World.setDelay(10);
         thirdMethod(bob);
-
+        System.out.println(bob.direction());
         goHome(bob);
     }
 }
