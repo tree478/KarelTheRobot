@@ -37,17 +37,15 @@ public class TagTeam implements Directions {
         
         bob.turnLeft();
 
-        for(int i=0; i<3; i++){
+        for(int i=0; i<4; i++){
             bob.move();
             bob.turnLeft();
             moveForward(bob);
             turnRight(bob);
 
         }
-        moveForward(bob);
-        moveForward(bob);
 
-        for(int i=0; i<3; i++){
+        for(int i=0; i<4; i++){
             bob.move();
             turnRight(bob);
             moveForward(bob);
