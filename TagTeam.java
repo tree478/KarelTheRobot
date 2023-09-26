@@ -28,6 +28,7 @@ public class TagTeam implements Directions {
         }
 
         System.out.println("Finished climbStairs()");
+        System.out.println(bob.direction());
     }
 
     public static void makePeak(Robot bob){
@@ -52,9 +53,17 @@ public class TagTeam implements Directions {
             bob.turnLeft();
 
         }
+
+        bob.turnLeft();
+        System.out.println("Finished makePeak()");
+        System.out.println(bob.direction());
     }
 
     public static void thirdMethod(Robot bob){
+
+        bob.turnLeft();
+        bob.turnLeft();
+        System.out.println(bob.direction());
         for(int i=0; i<5; i++){
             moveForward(bob);
         }
@@ -76,6 +85,10 @@ public class TagTeam implements Directions {
 
         moveForward(bob);
         moveForward(bob);
+
+        bob.turnLeft();
+
+        System.out.println(bob.direction());
     }
 
     public static void goHome(Robot bob){
@@ -150,6 +163,7 @@ public class TagTeam implements Directions {
             moveForward(bob);
         }
 
+        System.out.println(bob.direction());
 
     }
     public static void main(String[] args){
@@ -161,10 +175,9 @@ public class TagTeam implements Directions {
 
         climbStairs(bob);
         makePeak(bob);
-        turnRight(bob);
+        //turnRight(bob);
         World.setDelay(10);
         thirdMethod(bob);
-        System.out.println(bob.direction());
         goHome(bob);
     }
 }
