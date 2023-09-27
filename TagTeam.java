@@ -92,6 +92,7 @@ public class TagTeam implements Directions {
     }
 
     public static void goHome(Robot bob){
+        turnRight(bob);
         for(int i=0; i<3; i++){
             turnRight(bob);
             moveForward(bob);
